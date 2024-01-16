@@ -1,0 +1,8 @@
+/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+.title-shadow {
+  text-shadow: 5px 5px #07a411;
+}

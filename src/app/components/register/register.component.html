@@ -1,0 +1,38 @@
+<h1 class="mb-2 text-center text-green-950 text-2xl">Register</h1>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="flex flex-col mb-2">
+    <label class="text-gray-800" for="username">Username:</label>
+    <input
+      class="p-1 pl-2 max-w-[250px] border border-gray-200 rounded-md focus:outline-none focus:shadow-none focus:border-green-900"
+      type="text"
+      placeholder="Username"
+      formControlName="username"
+    />
+  </div>
+
+  <div class="flex flex-col mb-2">
+    <label class="text-gray-800" for="email">Email:</label>
+    <input
+      class="p-1 pl-2 max-w-[250px] border border-gray-200 rounded-md focus:outline-none focus:shadow-none focus:border-green-900"
+      type="text"
+      placeholder="Email"
+      formControlName="email"
+    />
+  </div>
+
+  <div class="flex flex-col mb-2">
+    <label class="text-gray-800" for="password">Password:</label>
+    <input
+      class="p-1 pl-2 max-w-[250px] border border-gray-200 rounded-md focus:outline-none focus:shadow-none focus:border-green-900"
+      type="password"
+      placeholder="Password"
+      formControlName="password"
+    />
+  </div>
+  <button
+    class="mt-2 py-2 px-4 text-white bg-green-950 border border-grey rounded-md"
+    type="submit"
+  >
+    Sign Up
+  </button>
+</form>
