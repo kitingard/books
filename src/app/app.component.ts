@@ -7,6 +7,7 @@ import { LocalStorageService } from './services/local-storage/local-storage.serv
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { ModalNames } from './constants/modal-names.enum';
 
 @Component({
   selector: 'app-root',
@@ -26,6 +27,7 @@ export class AppComponent {
   dataService = inject(DataService);
   localStorageService = inject(LocalStorageService);
   title = 'books';
+  MODAL_NAMES = ModalNames;
 
   ngOnInit(): void {
     if (this.localStorageService.get('token')) {
@@ -42,7 +44,7 @@ export class AppComponent {
     this.stateService.currentUserSig.set(null);
   }
 
-  openModal() {
-    this.stateService.modalSig.set(true);
+  openModal(modalName: ModalNames) {
+    this.stateService.modalSig.set({ name: modalName });
   }
 }

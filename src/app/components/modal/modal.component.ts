@@ -10,6 +10,6 @@ export class ModalComponent {
   stateService = inject(StateService);
 
   closeModal() {
-    this.stateService.modalSig.set(false);
+    this.stateService.modalSig.set(null);
   }
 }
