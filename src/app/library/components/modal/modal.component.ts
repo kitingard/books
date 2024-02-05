@@ -1,8 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { StateService } from '../../services/state/state.service';
+import { StateService } from '../../../services/state/state.service';
 
 @Component({
-  selector: 'app-modal',
+  selector: 'lib-modal',
   standalone: true,
   templateUrl: './modal.component.html',
 })

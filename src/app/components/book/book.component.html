@@ -1,0 +1,16 @@
+<a [routerLink]="['/']" class="block my-4">← back</a>
+@if (book) {
+  <div class="flex flex-col md:flex-row">
+    <img
+      [src]="bookCover"
+      class="self-center md:self-start max-w-[120px] md:max-w-[250px] lg::max-w-[400px] h-auto"
+    />
+
+    <div class="mt-3 md:mt-0 mx-5">
+      <h3 class="mb-2 text-2xl">{{ book.title }}</h3>
+      <p class="">{{ book.author }}</p>
+      <p class="">{{ book.genre }}</p>
+      <p class="mt-4 max-w-[600px] text-lg">{{ book.description }}</p>
+    </div>
+  </div>
+}

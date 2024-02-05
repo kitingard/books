@@ -6,8 +6,12 @@ import { DataService } from './services/data/data.service';
 import { LocalStorageService } from './services/local-storage/local-storage.service';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
-import { ModalComponent } from './components/modal/modal.component';
-import { ModalNames } from './constants/modal-names.enum';
+import { ModalComponent } from './library/components/modal/modal.component';
+import { ModalNames } from './library/constants/modal-names.enum';
+import { PollingComponent } from './components/polling/polling.component';
+import { ButtonComponent } from './library/components/button/button.component';
+import { ButtonTypes } from './library/constants/button-types.enum';
+import { ButtonSizes } from './library/constants/button-size.enum';
 
 @Component({
   selector: 'app-root',
@@ -20,14 +24,18 @@ import { ModalNames } from './constants/modal-names.enum';
     LoginComponent,
     RegisterComponent,
     ModalComponent,
+    PollingComponent,
+    ButtonComponent,
   ],
 })
 export class AppComponent {
   stateService = inject(StateService);
   dataService = inject(DataService);
   localStorageService = inject(LocalStorageService);
-  title = 'books';
+
   MODAL_NAMES = ModalNames;
+  BUTTON_TYPES = ButtonTypes;
+  BUTTON_SIZES = ButtonSizes;
 
   ngOnInit(): void {
     if (this.localStorageService.get('token')) {

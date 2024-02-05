@@ -1,0 +1,32 @@
+<div class="mt-15 my-10">
+  @if (this.stateService.pollingSig()) {
+    <p class="mb-4 text-lg text-gray-700">
+      {{ this.stateService.pollingSig()?.question }}
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 auto-rows-fr">
+      @for (
+        option of this.stateService.pollingSig()?.options;
+        track option.answer;
+        let idx = $index
+      ) {
+        <lib-button
+          class="block min-h-10"
+          [type]="BUTTON_TYPES.GHOST"
+          [size]="BUTTON_SIZES.FULL"
+          (buttonClickEvent)="chooseAnswer(idx)"
+          [text]="option.answer ?? ''"
+        ></lib-button>
+      }
+    </div>
+  } @else {
+    <p class="mb-4 text-lg text-gray-700">
+      This app was designed to recommend you my favorite books. I hope you enjoy
+      it!
+    </p>
+    <lib-button
+      (buttonClickEvent)="startPolling()"
+      text="Click to start"
+    ></lib-button>
+  }
+</div>

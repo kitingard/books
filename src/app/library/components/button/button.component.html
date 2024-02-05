@@ -1,0 +1,8 @@
+<button
+  class="rounded-md cursor-pointer"
+  [ngClass]="type | buttonPipe: size"
+  type="button"
+  (click)="clickOnButton()"
+>
+  {{ text }}
+</button>
