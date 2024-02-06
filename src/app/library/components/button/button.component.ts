@@ -9,6 +9,7 @@ import { NgClass } from '@angular/common';
   standalone: true,
   imports: [ButtonPipe, NgClass],
   templateUrl: './button.component.html',
+  styleUrl: './button.component.scss',
 })
 export class ButtonComponent {
   @Output() buttonClickEvent = new EventEmitter();

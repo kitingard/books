@@ -14,12 +14,12 @@ export class ButtonPipe implements PipeTransform {
       [ButtonTypes.SECONDARY]:
         'text-white bg-gray-700 border border-gray hover:bg-gray-600',
       [ButtonTypes.GHOST]:
-        'text-primary border border-gray-400 hover:bg-neutral-100',
+        'text-green-950 border border-gray-400 hover:bg-neutral-100',
     };
 
     const sizes = {
       [ButtonSizes.FULL]: 'w-full h-full py-2 px-4',
-      [ButtonSizes.SMALL]: 'py-1 px-3 w-[100px]',
+      [ButtonSizes.SMALL]: 'py-1 px-3',
       [ButtonSizes.MIDDLE]: 'py-2 px-4 text-lg',
       [ButtonSizes.LARGE]: 'py-4 px-6 text-xl',
     };
